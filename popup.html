@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <style>
-    body{font-family:Arial;padding:12px;width:320px}
-    input, textarea{width:100%;margin:6px 0;padding:6px;box-sizing:border-box}
-    button{padding:8px;width:100%;margin-top:6px}
+    body{font-family:Arial;padding:12px;width:350px}
+    input, textarea{width:100%;margin:4px 0 8px;padding:6px;box-sizing:border-box}
+    button{padding:8px;width:100%;margin-top:6px;cursor:pointer}
     #signed{display:none}
+    h3 {margin-bottom: 10px;}
+    fieldset { border: 1px solid #ccc; border-radius: 4px; margin-bottom: 12px; }
+    legend { font-weight: bold; padding: 0 5px; }
+    .phone-group { display: flex; gap: 8px; }
+    .phone-group .code { flex-basis: 70px; }
+    .phone-group .number { flex-grow: 1; }
   </style>
 </head>
 <body>
@@ -14,13 +20,39 @@
   <button id="signin">Sign in with Google</button>
 
   <div id="signed">
-    <p id="userEmail"></p>
-    <label>Name <input id="name"></label>
-    <label>Email <input id="email"></label>
-    <label>Phone <input id="phone"></label>
-    <label>Resume (short) <textarea id="resume" rows="3"></textarea></label>
-    <button id="save">Save profile</button>
-    <button id="fill">Fill current page</button>
+    <p>Signed in as: <strong id="userEmail"></strong></p>
+
+    <fieldset>
+      <legend>Personal</legend>
+      <label>Full Name <input id="name"></label>
+      <label>Email <input id="email"></label>
+      <label>Phone</label>
+      <div class="phone-group">
+        <input id="phoneCode" placeholder="Code (e.g. +91)" class="code">
+        <input id="phoneNumber" placeholder="Number" class="number">
+      </div>
+      <label>LinkedIn URL <input id="linkedin" placeholder="https://linkedin.com/in/..."></label>
+      <label>Portfolio/Website URL <input id="portfolio" placeholder="https://..."></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Current/Latest Role</legend>
+      <label>Job Title <input id="jobTitle"></label>
+      <label>Company <input id="companyName"></label>
+      <label>Location <input id="jobLocation" placeholder="e.g. New York, NY or Remote"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Latest Education</legend>
+      <label>School/University <input id="schoolName"></label>
+      <label>Degree <input id="degree" placeholder="e.g. Bachelor of Science"></label>
+      <label>Field of Study <input id="fieldOfStudy" placeholder="e.g. Computer Science"></label>
+    </fieldset>
+    
+    <label>Resume/CV (short text) <textarea id="resume" rows="3"></textarea></label>
+    
+    <button id="save">Save Profile</button>
+    <button id="fill">Fill Current Page</button>
     <button id="logout">Sign out</button>
   </div>
 
