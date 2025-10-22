@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body{font-family:Arial;padding:12px;width:320px}
+    input, textarea{width:100%;margin:6px 0;padding:6px;box-sizing:border-box}
+    button{padding:8px;width:100%;margin-top:6px}
+    #signed{display:none}
+  </style>
+</head>
+<body>
+  <h3>Job AutoFill</h3>
+  <button id="signin">Sign in with Google</button>
+
+  <div id="signed">
+    <p id="userEmail"></p>
+    <label>Name <input id="name"></label>
+    <label>Email <input id="email"></label>
+    <label>Phone <input id="phone"></label>
+    <label>Resume (short) <textarea id="resume" rows="3"></textarea></label>
+    <button id="save">Save profile</button>
+    <button id="fill">Fill current page</button>
+    <button id="logout">Sign out</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
